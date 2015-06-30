@@ -30,7 +30,7 @@ button {background: #00f; border: none; border-radius: 5px}
 
 .glyphicon {font-size: 45px; display: block; color: lightseagreen;}
 
-h2 .glyphicon {display: inline; }
+h2 .glyphicon {display: inline; margin-right: 10px}
 
 .alert { padding: 10px;}
 
