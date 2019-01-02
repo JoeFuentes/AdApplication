@@ -1,52 +1,73 @@
-<!DOCTYPE=html>
-<html lang="en-us" ng-app='adApp'>
-	<head>
-        <title>Ad App</title>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <meta name="viewport" content="width=device-width,initial-scale = 1.0,maximum-scale = 1.0">
-	
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
-        <link rel="stylesheet" href="ads.css" />
-        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-        <style>
-        html, body, input, select, textarea { font-size: 1.1em !important;}
-        </style>
-        <script src="https://code.angularjs.org/1.4.0-rc.2/angular.min.js"></script>
-        <script src="https://code.angularjs.org/1.4.0-rc.2/angular-messages.min.js"></script>
-        <script src="adApp.js"></script>
-	
-	</head>
+<!DOCTYPE =html>
+<!-- this is just a small add to use GitHub -->
+<html lang="en-us" ng-app="adApp">
+  <head>
+    <title>Ad App</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale = 1.0,maximum-scale = 1.0"
+    />
 
-	<body>
-        <div class="container" ng-controller='adController'>
-            
-            <h2> 
-                <span ng-show="showFolders">Ad Folders</span>
-                <span ng-hide="showFolders"><span class="glyphicon glyphicon-folder-open" ></span> {{folderName}}</span>
-            </h2>
-            
-            <!-- show list of folders -->
-            <div class="adfolders" ng-show="showFolders">
-                <ul>
-                    <li ng-repeat="folder in folderList" ng-click="showAdsForFolder(folder.id)">
-                        <div > <span class="glyphicon glyphicon-folder-close" ></span> </div>
-                        {{folder.name}}
-                    </li>
-                </ul>
-            </div>
-            
-            <!-- show list of add for a given folder -->
-            <div ng-hide="showFolders">
-                <h5 class="alert" ng-class="{'alert-danger': !adList, 'alert-info': adList}">
-                    {{adList? adList.length: 'No'}} ads found 
-                </h5>
-                <p ng-repeat="ad in adList"><a href="{{ad.url}}" target='new'>{{ad.name}}</a></p>
-                
-                <button ng-click="showFolders=true">return to Ad Folders</button>
-            </div>
-        </div>
-	</body>
-    
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="ads.css" />
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <style>
+      html,
+      body,
+      input,
+      select,
+      textarea {
+        font-size: 1.1em !important;
+      }
+    </style>
+    <script src="https://code.angularjs.org/1.4.0-rc.2/angular.min.js"></script>
+    <script src="https://code.angularjs.org/1.4.0-rc.2/angular-messages.min.js"></script>
+    <script src="adApp.js"></script>
+  </head>
+
+  <body>
+    <div class="container" ng-controller="adController">
+      <h2>
+        <span ng-show="showFolders">Ad Folders</span>
+        <span ng-hide="showFolders"
+          ><span class="glyphicon glyphicon-folder-open"></span>
+          {{ folderName }}</span
+        >
+      </h2>
+
+      <!-- show list of folders -->
+      <div class="adfolders" ng-show="showFolders">
+        <ul>
+          <li
+            ng-repeat="folder in folderList"
+            ng-click="showAdsForFolder(folder.id)"
+          >
+            <div><span class="glyphicon glyphicon-folder-close"></span></div>
+            {{ folder.name }}
+          </li>
+        </ul>
+      </div>
+
+      <!-- show list of add for a given folder -->
+      <div ng-hide="showFolders">
+        <h5
+          class="alert"
+          ng-class="{'alert-danger': !adList, 'alert-info': adList}"
+        >
+          {{ adList ? adList.length : "No" }} ads found
+        </h5>
+        <p ng-repeat="ad in adList">
+          <a href="{{ad.url}}" target="new">{{ ad.name }}</a>
+        </p>
+
+        <button ng-click="showFolders=true">return to Ad Folders</button>
+      </div>
+    </div>
+  </body>
 </html>
